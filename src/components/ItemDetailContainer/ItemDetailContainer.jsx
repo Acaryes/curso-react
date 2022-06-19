@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { productos } from '../../mock/products';
-import ItemList from '../ItemList/ItemList';
-import ItemCount from '../ItemCount/ItemCount';
+import ItemDetail from '../ItemDetail/ItemDetail';
 
-
-const ItemListContainer = ({ mensaje }) => {
+const ItemDetailContainer = ({ mensaje, itemId }) => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
         const traerProductos = new Promise((res, rej) => {
             setTimeout(() => {
-                res(productos);
+                res(productos[itemId]);
             }, 2000);
         });
         traerProductos
@@ -26,10 +24,9 @@ const ItemListContainer = ({ mensaje }) => {
     return (
         <>
             <div>{mensaje}</div>
-            <ItemCount initial={1} stock={3}/>
-            <ItemList items={products} />
+            <ItemDetail item={products}/>
         </>
     );
 };
 
-export default ItemListContainer;
+export default ItemDetailContainer;

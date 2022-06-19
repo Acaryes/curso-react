@@ -1,0 +1,15 @@
+.hoverable-card:hover {
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
+.photo {
+	height: 300px;
+}
+
+.photo > img {
+	object-fit: cover;
+	height: inherit !important;
+}
+
+
