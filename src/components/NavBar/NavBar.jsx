@@ -8,9 +8,9 @@ export default function NavBar() {
 
         <div class="topnav" id="myTopnav">
           <Link to="/">Inicio</Link>
-          <Link to="/detalles">Detalles</Link>
-          <a href="#contacto">Contacto</a>
-          <a href="#sobrenosotros">Sobre Nosotros</a>
+          <Link to="/category/Monitores">Monitores</Link>
+          <Link to="/category/CPU">CPU</Link>
+          <Link to="/category/Accesorios">Accesorios</Link>
           <CartWidget/>
           <span>3</span>
         </div>

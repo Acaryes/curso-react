@@ -6,12 +6,15 @@ import { useParams } from "react-router-dom"
 const ItemDetailContainer = ({ mensaje, itemId }) => {
     const [products, setProducts] = useState([]);
     const { id } = useParams();
+    console.log(id)
 
     useEffect(() => {
         const traerProductos = new Promise((res, rej) => {
-            let itemNumber = parseInt(itemId)
             setTimeout(() => {
-                res(productos[itemNumber]);
+                const itemFound = productos.find(item => {
+                   return item.id === parseInt(id)
+                })
+                res(itemFound);
             }, 2000);
         });
         traerProductos
@@ -21,7 +24,7 @@ const ItemDetailContainer = ({ mensaje, itemId }) => {
             .catch((error) => {
                 console.log(error);
             });
-    }, []);
+    }, [id]);
 
 
     return (
