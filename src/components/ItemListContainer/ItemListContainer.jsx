@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { productos } from "../../mock/products";
 import ItemList from "../ItemList/ItemList";
-import ItemCount from "../ItemCount/ItemCount";
 import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({ mensaje }) => {
@@ -33,7 +32,6 @@ const ItemListContainer = ({ mensaje }) => {
   return (
     <>
       <div>{mensaje}</div>
-      <ItemCount initial={1} stock={3} />
       <ItemList items={products} />
     </>
   );

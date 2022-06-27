@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Button, Label, Icon } from 'semantic-ui-react'
 
 
-function ItemCount({ stock, initial }) {
+function ItemCount({ stock, initial, onAdd }) {
 
     const [count, setCount] = useState(initial)
 
@@ -27,6 +27,8 @@ function ItemCount({ stock, initial }) {
             <Button onClick={resta} color="red"> <Icon name='minus' /> Restar</Button>
             <Label>{count}</Label>
             <Button onClick={suma} color="green"> <Icon name='plus' />Agregar</Button>
+            <br/>
+            <Button onClick={onAdd} color='black'>Terminar Compra</Button>
         </div>
     )
 }
