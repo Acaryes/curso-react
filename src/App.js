@@ -23,14 +23,10 @@ function App() {
                     <ItemListContainer mensaje={"Catalogo de productos"} />
                   }
                 />
-              </Routes>
-              <Routes>
                 <Route
                   path="/category/:category"
                   element={<ItemListContainer mensaje={"Categoria de items"} />}
                 />
-              </Routes>
-              <Routes>
                 <Route
                   path="/detalles/:id"
                   element={
