@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {CartContextProvider} from "./context/CartContext"
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Grid divided="horizontally">
         <Grid.Row>
           <Grid.Column>
+            <CartContextProvider>
             <BrowserRouter>
               <NavBar />
               <Routes>
@@ -37,6 +39,7 @@ function App() {
                 />
               </Routes>
             </BrowserRouter>
+            </CartContextProvider>
           </Grid.Column>
         </Grid.Row>
       </Grid>

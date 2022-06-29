@@ -1,12 +1,19 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import ItemCount from "../ItemCount/ItemCount";
+import cartContext from '../../context/CartContext';
 
 
 function ItemDetail({ item }) {
   const [isAddedToCart, setAddedToCart] = useState(false)
-  function handleOnAdd() {
+
+  const {addToCart,cart} = useContext(cartContext)
+
+  function handleOnAdd(cant) {
+    addToCart( item, cant )
     setAddedToCart(true)
   }
+
+  console.log(cart)
 
   return (
     <div>
