@@ -9,10 +9,8 @@ export function CartContextProvider(props) {
         if (isInCart(item.id)) {
         alert("Este producto ya fue agregado")
         } else {
-            setCart([...cart, {
-                ...item,
-                cantidad: cant
-            }])
+            setCart([...cart, 
+                { ...item,  cant }])
         }
     }
 
