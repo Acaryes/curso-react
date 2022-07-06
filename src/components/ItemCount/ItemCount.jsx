@@ -1,18 +1,11 @@
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import { Button, Label, Icon } from 'semantic-ui-react'
-import cartContext from '../../context/CartContext';
 
 
 
 function ItemCount({ stock, initial, onAdd }) {
 
     const [count, setCount] = useState(initial)
-
-    const {clearCart} = useContext(cartContext)
-
-    function handleClearCart(){
-        clearCart()
-    }
 
     function suma() {
         if(count < stock){
@@ -40,8 +33,7 @@ function ItemCount({ stock, initial, onAdd }) {
             <Label>{count}</Label>
             <Button onClick={suma} color="green"> <Icon name='plus' />Agregar</Button>
             <br/>
-            <Button onClick={handleClearCart} color='blue'>Limpiar carrito</Button>
-            <Button onClick={addToCart} color='black'>Terminar Compra</Button>
+            <Button  onClick={addToCart} color='black'>Terminar Compra</Button>
         </div>
     )
 }

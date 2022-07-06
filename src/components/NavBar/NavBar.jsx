@@ -12,7 +12,6 @@ export default function NavBar() {
           <Link to="/category/CPU">CPU</Link>
           <Link to="/category/Accesorios">Accesorios</Link>
           <CartWidget/>
-          <span>3</span>
         </div>
 
     );
