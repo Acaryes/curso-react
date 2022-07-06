@@ -7,8 +7,10 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {CartContextProvider} from "./context/CartContext"
 import Cart from "./components/Cart/Cart"
+import {getItems} from "./services/firestore";
 
 function App() {
+  getItems()
   return (
     <div className="App">
       <Grid>
