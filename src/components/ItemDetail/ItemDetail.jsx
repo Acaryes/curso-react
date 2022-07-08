@@ -22,7 +22,7 @@ function ItemDetail({ item }) {
 
   return (
     <div>
-      <Card className="hoverable-card">
+      <Card className="hoverable-card" color='teal'>
         <Image className="photo" src={item.img} wrapped ui={false} />
 
         <Card.Content>

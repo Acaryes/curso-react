@@ -3,10 +3,29 @@ import { useContext } from 'react'
 import cartContext from '../../context/CartContext'
 import { Card, Image, Grid, Button, Label } from "semantic-ui-react";
 
+import {createOrder } from '../../services/firestore'
+
 
 function Cart() {
 
   const { cart, clearCart, totalPriceCart, removeItem } = useContext(cartContext)
+
+  function handleOrder(){
+    const dataOrder = {
+      buyer: {
+        name: "Adan Contreras",
+        phone: 6863153236,
+        email: "acaryes@gmail.com"
+      },
+      item: cart,
+      total: totalPriceCart()
+    }
+    createOrder(dataOrder).then ( (orderCreated) => {
+      clearCart()
+      console.log(orderCreated.id)
+    })
+  }
+
 
   function handleClearCart() {
     clearCart()
@@ -36,8 +55,10 @@ function Cart() {
             </Grid.Column>
           ))}
         </Grid.Row>
+        
         {(cart.length > 0) ?
-          <><Label>Total a pagar: ${totalPriceCart()}</Label>
+         <> <Button onClick={handleOrder} color='blue'>Finalizar Compra</Button>
+          <Label>Total a pagar: ${totalPriceCart()}</Label>
             <Button onClick={handleClearCart} color='blue'>Limpiar carrito</Button></> : "No hay objetos en el carrito, agregue algun articulo"}
       </Grid>
     </>

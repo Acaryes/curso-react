@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button, Label, Icon } from 'semantic-ui-react'
+import { Button, Label, Icon, Grid } from 'semantic-ui-react'
 
 
 
@@ -29,11 +29,15 @@ function ItemCount({ stock, initial, onAdd }) {
 
     return (
         <div>
-            <Button onClick={resta} color="red"> <Icon name='minus' /> Restar</Button>
-            <Label>{count}</Label>
-            <Button onClick={suma} color="green"> <Icon name='plus' />Agregar</Button>
+            <Grid centered>
+            <Grid.Row>
+            <Button onClick={resta} color="teal" size='tiny'> <Icon name='minus'/></Button>
+            <Label size='large'>{count}</Label>
+            <Button onClick={suma} color="teal" size='tiny'> <Icon name='plus'/></Button>
+            </Grid.Row>
             <br/>
-            <Button  onClick={addToCart} color='black'>Terminar Compra</Button>
+            <Button onClick={addToCart} size='green' color='black'>Agregar al Carrito</Button>
+            </Grid>
         </div>
     )
 }
