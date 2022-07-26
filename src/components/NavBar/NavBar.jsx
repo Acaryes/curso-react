@@ -11,7 +11,8 @@ export default function NavBar() {
           <Link to="/category/Monitores">Monitores</Link>
           <Link to="/category/CPU">CPU</Link>
           <Link to="/category/Accesorios">Accesorios</Link>
-          <CartWidget/>
+          <Link to="/cart"><CartWidget/></Link>
+
         </div>
 
     );
