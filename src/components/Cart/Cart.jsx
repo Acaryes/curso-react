@@ -37,7 +37,7 @@ function Cart() {
     }
     createOrder(dataOrder).then((orderCreated) => {
       clearCart()
-      console.log(orderCreated.id)
+      alert("Su id de compra es: " + orderCreated.id)
     })
   }
 
